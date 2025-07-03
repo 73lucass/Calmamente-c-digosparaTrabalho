@@ -1,0 +1,143 @@
+        /* Variáveis de Cores e Fontes - Mais VIBRANTES e LÚDICAS */
+        :root {
+            --cor-fundo-principal: #F8F8F8; /* AGORA BRANCO SUAVE */
+            --cor-nuvem: #FFFFFF; /* Branco Nuvem (mantido para os cards) */
+            --cor-grama-clara: #DCE8CC; /* Verde Menta Claro */
+            --cor-grama-escura: #A8D8B9; /* Verde Pastel Vibrante */
+
+            --cor-primaria-acao: #66CCFF; /* Azul Brilhante */
+            --cor-secundaria-acao: #FFD700; /* Amarelo Sol */
+            --cor-terciaria-acao: #FF99CC; /* Rosa Chiclete */
+            --cor-roxo-divertido: #B388FF; /* Roxo Claro */
+
+            --cor-texto-escuro: #333333; /* Cinza Escuro */
+            --cor-texto-medio: #555555; /* Cinza Médio */
+            --cor-texto-claro: #FFFFFF; /* Branco */
+
+            --cor-sombra-leve: rgba(0, 0, 0, 0.1);
+            --cor-borda-elementos: rgba(0, 0, 0, 0.15); /* Bordas suaves para elementos */
+
+            --fonte-titulo: 'Fredoka', sans-serif; /* Fonte mais arredondada e divertida */
+            --fonte-corpo: 'Nunito', sans-serif; /* Fonte legível e amigável */
+        }
+        /*===========
+            HEADER 
+          ===========
+        */
+       header {
+        background-color: var(--cor-primaria-acao); /* Azul para o céu */
+        padding: 1rem 5%;
+        display: flex;
+        justify-content: space-between; /* Espaço entre o primeiro e o último item */
+        align-items: center;
+         box-shadow: 0 4px 8px var(--cor-sombra-leve);
+        border-bottom-left-radius: 10px; /* MAIS ARREDONDADO */
+        border-bottom-right-radius: 10px; /* MAIS ARREDONDADO */
+        position: relative;
+        z-index: 1000;
+        max-height: 65px;
+}
+
+        .logo {
+            font-family: var(--fonte-titulo);
+            font-size: 2.5rem; /* UM POUCO MAIOR */
+            font-weight: 700;
+            color: var(--cor-texto-claro);
+            text-decoration: none;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.15); /* SOMBRA MAIS PROEMINENTE */
+            transition: transform 0.2s ease, text-shadow 0.2s ease;
+        }
+        .logo:hover {
+            transform: scale(1.02); /* MAIS BRINCALHÃO */
+            text-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+        }
+        
+        /* Contêiner para centralizar os links e botão de perfil */
+        .header-center-container {
+            flex-grow: 1; /* Permite que ocupe o espaço central */
+            display: flex;
+            justify-content: center; /* Centraliza o conteúdo dentro dele */
+            align-items: center;
+        }
+        .nav-links-container {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Estilos para os links do cabeçalho (Home e Sobre Nós) */
+        .nav-link {
+            text-decoration: none; /* Remove sublinhado */
+            color: var(--cor-texto-claro); /* Cor branca */
+            font-family: var(--fonte-titulo);
+            font-weight: 700;
+            transition: transform 0.2s ease, text-shadow 0.2s ease;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+            padding: 0.5rem 1rem; /* Adiciona padding para área clicável */
+            border-radius: 15px; /* Suavemente arredondado */
+            margin: 0 10px; /* Espaço entre os links */
+            font-size: 1.3rem; /* Tamanho padrão para todos os links */
+        }
+
+        .nav-link:hover {
+            transform: translateY(-3px); /* Efeito de hover */
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil no hover */
+        }
+
+        .btn-header {
+            font-family: var(--fonte-corpo);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--cor-texto-claro);
+            padding: 0.6rem 1.2rem;
+            border: 2px solid var(--cor-texto-claro);
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /*===========================
+            ESTILO PARA OS BOTÕES
+                  DO HEADER 
+          ===========================
+        */
+
+        .btn-header:hover {
+            background-color: var(--cor-texto-claro);
+            color: var(--cor-primaria-acao);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .btn-header.btn-highlight {
+            background-color: var(--cor-secundaria-acao); /* Amarelo */
+            color: var(--cor-texto-escuro);
+            border-color: var(--cor-secundaria-acao);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+            .btn-header.btn-highlight:hover {
+            background-color: #FFC107; /* Amarelo um pouco mais escuro */
+            border-color: #FFC107;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Espaço entre os botões */
+        }   
+
+        /*============================
+            FIM DO ESTILO DOS BOTÕES 
+          ============================
+        */
+
+        img{
+            width: 80px; /* Logo um pouco maior */
+            height: auto; /* Mantém a proporção */
+            margin-right: 20px;
+        }
