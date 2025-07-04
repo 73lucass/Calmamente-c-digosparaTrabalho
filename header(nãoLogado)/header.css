@@ -141,3 +141,54 @@
             height: auto; /* Mantém a proporção */
             margin-right: 20px;
         }
+
+        /* ==========================================================================
+   Responsividade (Telas Menores - Tablets e Celulares)
+   ========================================================================== */
+
+/* Para telas com largura máxima de 992px (tablets em modo paisagem) */
+@media (max-width: 992px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+    .nav-links-container {
+        gap: 1.2rem; /* Diminui o espaçamento entre os links */
+    }
+    header .logo {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* Para telas com largura máxima de 820px (quebra principal para o menu mobile) */
+@media (max-width: 820px) {
+    header {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        align-items: center; /* Centraliza os itens empilhados */
+        gap: 1.5rem; /* Espaçamento entre os blocos (logo, links, botões) */
+        padding: 1.5rem 1rem;
+    }
+
+    header .logo {
+        margin-right: 0; /* Remove o truque que empurrava para a direita */
+    }
+
+    .nav-links-container {
+        /* Se os links ficarem muito longos, eles quebrarão a linha */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem 1.5rem;
+        order: 3; /* Muda a ordem para os botões aparecerem antes */
+    }
+
+    .nav-buttons {
+        order: 2; /* Ordem dos botões */
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-header {
+      flex-grow: 1; /* Faz os botões crescerem para ocupar o espaço */
+      max-width: 200px;
+    }
+}

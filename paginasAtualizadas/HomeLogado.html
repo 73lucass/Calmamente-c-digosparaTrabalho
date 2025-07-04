@@ -122,7 +122,7 @@
         .logo:hover {
             transform: scale(1.02); /* MAIS BRINCALHÃO */
             text-shadow: 4px 4px 0 rgba(0,0,0,0.2);
-        }j
+        }
         
         /* Contêiner para centralizar os links e botão de perfil */
         .header-center-container {
@@ -134,7 +134,7 @@
         .nav-links-container {
             display: flex;
             align-items: center;
-            margin-left: auto;
+            margin-left: 91px;
             margin-right: auto;
         }
         /* Estilos para os links do cabeçalho (Home e Sobre Nós) */
@@ -828,44 +828,7 @@
             }
         }
 
-        /* ===========
-         OVERLAY DE CARREGAMENTO 
-        ===========
-        */
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.95); /* Fundo um pouco mais opaco */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999; /* Garante que fique acima de tudo */
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease, visibility 0.5s ease; /* Transição mais suave e longa */
-        }
-
-        .loading-overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .loading-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            background-color: var(--cor-nuvem);
-            padding: 3.5rem 5rem; /* Um pouco mais de padding */
-            border-radius: 30px; /* Bordas mais arredondadas */
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
-            transform: scale(0.8); /* Inicia menor */
-            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; /* Animação de pop mais "saltitante" */
-            border: 4px solid var(--cor-primaria-acao); /* Borda mais forte */
-        }
+        
 
         img{
             width: 80px; /* Logo um pouco maior */
@@ -1035,45 +998,7 @@
             text-shadow: 3px 3px 0px rgba(0,0,0,0.08);
             line-height: 1.1;
         }
-        .nav-buttons {
-            display: flex;
-            align-items: center;
-            gap: 15px; /* Espaço entre os botões */
-        }
-
-        .btn-header {
-            font-family: var(--fonte-corpo);
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--cor-texto-claro);
-            padding: 0.6rem 1.2rem;
-            border: 2px solid var(--cor-texto-claro);
-            border-radius: 25px;
-            text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-            white-space: nowrap; /* Evita que o texto quebre em várias linhas */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .btn-header:hover {
-            background-color: var(--cor-texto-claro);
-            color: var(--cor-primaria-acao);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        
-        .btn-header.btn-highlight {
-            background-color: var(--cor-secundaria-acao); /* Amarelo */
-            color: var(--cor-texto-escuro);
-            border-color: var(--cor-secundaria-acao);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-            .btn-header.btn-highlight:hover {
-            background-color: #FFC107; /* Amarelo um pouco mais escuro */
-            border-color: #FFC107;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-        }   
+          
 
         @keyframes popIn {
             0% { transform: scale(0.5); opacity: 0; }
@@ -1117,6 +1042,136 @@
             .content-highlights h2 { font-size: 2.5rem; }
         }
 
+        /* === INÍCIO: ESTILOS PARA O MENU DE USUÁRIO === */
+
+        .user-nav-group {
+            position: relative; /* Necessário para posicionar o dropdown */
+            display: flex; /* Adicionado para alinhar os botões/links */
+            align-items: center;
+            gap: 20px; /* Espaçamento entre botões no cabeçalho */
+            /* Removedo `nav-buttons` daqui, ele agora é .header-center-container */
+        }
+
+        .user-nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.user-profile-button {
+    background-color: var(--cor-roxo-divertido);
+    color: var(--cor-texto-claro);
+    border: none;
+    border-radius: 50%;
+    width: 55px; /* UM POUCO MAIOR */
+    height: 55px; /* UM POUCO MAIOR */
+    font-size: 2rem; /* ÍCONE MAIOR */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25); /* SOMBRA MAIS SUAVE */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative; /* Para a bolha de notificação se necessário */
+}
+
+       .user-profile-button:hover {
+    background-color: #9966FF; /* Roxo um pouco mais escuro */
+    transform: translateY(-3px) rotate(5deg); /* MAIS BRINCALHÃO */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* ADICIONADO: Efeito de "batida" no ícone do usuário */
+.user-profile-button i {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+        @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+        .dropdown-content {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: calc(100% + 15px); /* Posição abaixo do botão, um pouco mais afastado */
+    right: 0;
+    background-color: var(--cor-nuvem);
+    min-width: 250px; /* UM POUCO MAIOR */
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.25); /* SOMBRA MAIS PRONUNCIADA */
+    border-radius: 20px; /* MAIS ARREDONDADO */
+    z-index: 1;
+    overflow: hidden; /* Garante que os filhos respeitem o border-radius */
+    animation: fadeInScale 0.4s ease-out; /* NOVA ANIMAÇÃO */
+    border: 2px solid var(--cor-primaria-acao); /* Borda colorida */
+}
+
+/* Classe 'show' que será adicionada via JavaScript para exibir o menu */
+.dropdown-content.show {
+    display: block;
+}
+
+        .dropdown-content .user-info {
+            padding: 1.2rem 1.8rem; /* MAIOR PADDING */
+            font-family: var(--fonte-titulo);
+            font-size: 1.3rem; /* TEXTO MAIOR */
+            color: var(--cor-texto-escuro);
+            background-color: #e6f7ff; /* FUNDO MAIS CLARO E AMIGÁVEL */
+            border-bottom: 2px solid var(--cor-primaria-acao); /* Borda mais forte */
+            text-align: center; /* CENTRALIZADO */
+        }
+
+        .dropdown-content .user-info strong {
+            color: var(--cor-roxo-divertido);
+            display: block; /* Nome em nova linha */
+            margin-top: 5px;
+        }
+
+        .dropdown-content a {
+            color: var(--cor-texto-medio);
+            padding: 1.2rem 1.8rem; /* MAIOR PADDING */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px; /* MAIOR ESPAÇAMENTO */
+            font-size: 1.2rem; /* TEXTO MAIOR */
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            border-bottom: 1px solid rgba(0,0,0,0.05); /* Separador suave */
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f0f8ff; /* Um azulzinho bem clarinho no hover */
+            transform: translateX(5px); /* Desliza um pouco */
+        }
+
+        .dropdown-content a i {
+            font-size: 1.4rem; /* ÍCONES MAIORES */
+            width: 25px; /* Alinha o texto */
+            text-align: center;
+        }
+        
+        /* Cor específica para o ícone de editar e sair */
+        .dropdown-content a .fa-pencil-alt { color: var(--cor-secundaria-acao); }
+        .dropdown-content a .fa-sign-out-alt { color: var(--cor-terciaria-acao); }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        /* === FIM: ESTILOS PARA O MENU DE USUÁRIO === */
+
     </style>
 </head>
 <body>
@@ -1127,16 +1182,16 @@
         <h1 class="logo">Calmamente</h1>
         
             <nav class="nav-links-container">
-            <a href="Home(nãoLogado).html" class="nav-link" id="homeButton">
+            <a href="HomeLogado.html" class="nav-link" id="homeButton">
                 Home
             </a>
-            <a href="sobreNós.html" class="nav-link" id="aboutUsLink">
+            <a href="sobreNósLogado.html" class="nav-link" id="aboutUsLink">
                 Sobre Nós
             </a>
-            <a href="Login.html" class="nav-link" id="activitiesResourcesButton">
+            <a href="Atividades&Recursos.html" class="nav-link" id="activitiesResourcesButton">
                 Atividades & Recursos
             </a>
-            <a href="Login.html" class="nav-link" id="contactButton">
+            <a href="#" class="nav-link" id="contactButton">
                 Relatório
             </a>    
             <a href="#" class="nav-link" id="contactButton">
@@ -1144,10 +1199,18 @@
             </a>
             </nav>
 
-        <nav class="nav-buttons">
-            <a href="Login.html" class="btn-header btn-highlight">Entrar</a>
-            <a href="Cadastro.html" class="btn-header">Cadastrar</a>
-        </nav>
+        <div class="user-nav">
+        <button class="user-profile-button" id="userProfileBtn">
+            <i class="fas fa-user-circle"></i>
+        </button>
+        <div class="dropdown-content" id="userDropdown">
+            <div class="user-info">
+                Olá, <strong></strong>!
+            </div>
+            <a href="#editar-perfil"><i class="fas fa-pencil-alt"></i> Editar Perfil</a>
+            <a href="#sair"><i class="fas fa-sign-out-alt"></i> Sair</a>
+        </div>
+        </div>
     </header>
 
     <main>
@@ -1155,7 +1218,7 @@
             <h1>Conectando, Apoiando e Inspirando para um Mundo Mais Inclusivo.</h1>
             <p>Um espaço seguro e acolhedor para a comunidade autista e suas famílias, oferecendo ferramentas, atividades e uma rede de apoio mútuo.</p>
             <div class="cta-group">
-                <a href="Cadastro.html" class="btn-secondary"><i class="fas fa-users"></i> Juntar-se à Comunidade</a>
+                <a href="Atividades&Recursos.html" class="btn-primary"><i class="fas fa-compass"></i> Explorar emoções</a>
             </div>
         </section>
 
@@ -1174,7 +1237,7 @@
                     </div>
                     <h3>Relatório de Emoções</h3>
                     <p>Entenda e interprete suas emoções com nossa ferramenta. Um passo essencial para o autoconhecimento.</p>
-                    <a href="Login.html" class="btn-explorar"><i class="fas fa-arrow-right"></i> Começar</a>
+                    <a href="#" class="btn-explorar"><i class="fas fa-arrow-right"></i> Começar </a>
                 </div>
 
                 <div class="island-card">
@@ -1183,7 +1246,7 @@
                     </div>
                     <h3>Atividades & Recursos</h3>
                     <p>Encontre atividades e dinâmicas que auxiliam no tratamento e na convivência com o autismo.</p>
-                    <a href="Login.html" class="btn-explorar"><i class="fas fa-arrow-right"></i> Ler Mais</a>
+                    <a href="../Atividades&Recursos.html" class="btn-explorar"><i class="fas fa-arrow-right"></i> Ler Mais</a>
                 </div>
 
                 <div class="island-card">
@@ -1274,6 +1337,25 @@
     </div>
 
     <script>
+        /* SCRIPT PARA MENU DE USUÁRIO*/
+             // Lógica para o dropdown do perfil do usuário
+        const userProfileBtn = document.getElementById('userProfileBtn');
+        const userDropdown = document.getElementById('userDropdown');
+
+        userProfileBtn.addEventListener('click', () => {
+            userDropdown.classList.toggle('show');
+        });
+
+        // Fecha o dropdown se clicar fora dele
+        window.addEventListener('click', (event) => {
+            if (!userProfileBtn.contains(event.target) && !userDropdown.contains(event.target)) {
+                userDropdown.classList.remove('show');
+            }
+        });
+
+
+        /* FIM DO SCRIPT PARA MENU  DE USUÁRIO*/
+
         // --- SCRIPT PARA OS MODAIS (TERMOS, PRIVACIDADE E AJUDA) ---
 
         // Modal de Termos de Uso
